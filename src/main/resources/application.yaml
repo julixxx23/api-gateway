@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: api-gateway
+  profiles:
+    active: local
+  config:
+    import: optional:file:.env[.properties]
+  cloud:
+    config:
+      enabled: false
+
+server:
+  port: ${SERVER_PORT}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL}
+  instance:
+    prefer-ip-address: true
+
+security:
+  jwt:
+    secret: ${JWT_SECRET}
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.cloud.loadbalancer: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
