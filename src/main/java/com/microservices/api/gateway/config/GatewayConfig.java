@@ -16,7 +16,7 @@ import java.net.URI;
 @Configuration
 public class GatewayConfig{
 
-    //Funcion de limpia registros y monitoreo del servicio Users
+    //Función de limpia registros y monitoreo del servicio Users
     private RouterFunction<ServerResponse> buildRoute(
             String routeId, String path, String serviceName) {
 
